@@ -18,4 +18,5 @@ name_list.forEach(function(name,indexNumber) {
   if (name === "Waldo") {
     console.log("Found " + name + "at index " + name_list.indexOf(name) + "!");
   }
+
 })
