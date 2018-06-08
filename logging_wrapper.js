@@ -1,15 +1,10 @@
 var wrapLog = function (callback, name) {
 
     return function(){
-      if (arguments.length === 2){
-        var x = arguments[0];
-        var y = arguments[1]
-        console.log(callback(x,y));
-      } else {
-        var x = arguments[0];
-        var y = arguments[1];
-        var z = arguments[2];
-        console.log(callback(x,y,z));
+      var argArray = [];
+      for (var i = 0; i < arguments.length; i++){
+        argArray.push(arguments[i]);
+        console.log(callback.apply(null,argArray));
       }
 
     }
